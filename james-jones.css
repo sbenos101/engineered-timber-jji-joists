@@ -1,5 +1,3 @@
-<style>
-
 #maincontent { padding-top: 0; padding-bottom: 0; }
 .columns { max-width: 100%!important; padding: 0!important; row-gap: 0; }
 .columns .main {order: 0 !important;}
@@ -176,5 +174,3 @@
 .amform-page button:hover, .block.newsletter button:hover, .black-button a:hover { background: #009845; box-shadow: 0 0 5px 0px #292929!important; }
 
 }
-
-</style>
