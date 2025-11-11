@@ -1,0 +1,180 @@
+<style>
+
+#maincontent { padding-top: 0; padding-bottom: 0; }
+.columns { max-width: 100%!important; padding: 0!important; row-gap: 0; }
+.columns .main {order: 0 !important;}
+.columns strong { font-weight: 700; }
+.columns h2 { width: fit-content; font-size: 32px; line-height: 36px; font-weight: 700; border-bottom: 3px solid!important; margin: 10px auto 35px; padding-bottom: 10px!important; }
+.what-is-a-jji-joist h2, .what-is-a-jji-joist h2 { width: fit-content; font-size: 32px; line-height: 36px; font-weight: 700; border-bottom: 3px solid!important; margin: 10px auto 30px; padding-bottom: 10px!important; text-align: center; }
+.understanding-a-jji-joist h2 { width: fit-content; font-size: 32px; line-height: 36px; font-weight: 700; color: white; border-bottom: 3px solid!important; margin: 10px auto 30px; padding-bottom: 10px!important; text-align: center; }
+.columns h3 { width: fit-content; text-align: center; font-size: 22px; line-height: 30px; font-weight: 700; color: white; border-bottom: 2px solid!important; margin: 30px auto 20px; padding-bottom: 7px!important; }
+.columns h4 { width: fit-content; text-align: left; font-size: 18px; line-height: 26px; font-weight: 700; color: white; border-bottom: 2px solid!important; margin: 25px 0 20px; padding-bottom: 7px!important; }
+.columns ol { list-style: auto; line-height: 30px; font-size: 1.1rem; margin: 15px 20px 50px; padding: 0; font-weight: 700; }
+.overlay-heading h1 { position: relative; z-index: 2; color: #fff; font-size: 70px; line-height: 80px; font-weight: 900; margin: 0!important; }
+.gradient-over-image { position: relative; overflow: hidden; }
+.gradient-over-image::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); z-index: 1; }
+.top-banner-padding { padding: 100px 0 125px; }
+#cwberry-logo-green-white-background { position: relative; z-index: 2; }
+.overlay-green-hr { position: relative; z-index: 2; width: 40%; border-top: 3px solid #009845; }
+.white-underline h2 { border-color: #ffffff!important; }
+.green-underline h2 { border-color: #009845!important; }
+.green-underline h3 { border-color: #009845!important; }
+.green-underline h4 { border-color: #009845!important; }
+.introduction-margin { margin: 20px 0 50px; }
+.jji-joist-fade-from-top { opacity: 0; transform: translateY(-20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.jji-joist-fade-from-top.visible { opacity: 1; transform: translateY(0); }
+.jji-joist-fade-container { position: relative; max-height: 180px; overflow: hidden; margin: 20px auto 0; text-align: center; transition: max-height 0.5s ease; }
+.jji-joist-fade-container::after { content: ""; position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 40px); background: linear-gradient(to bottom, rgba(255,255,255,0) 10%, white 85%); pointer-events: none; transition: opacity 0.3s; }
+.jji-joist-fade-container.expanded { max-height: 2000px; }
+.jji-joist-fade-container.expanded::after { opacity: 0; }
+@keyframes fadeInTop { to { opacity: 1; transform: translateY(0); } }
+.read-more-read-less-jji-joist-button { position: relative; display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 2.15em auto 0; width: fit-content; padding: 0.6em 1.4em; font-weight: bold; text-align: center; text-decoration: none; border: 2px solid transparent; border-radius: 30px; background-color: #009845; color: #fff; z-index: 2; cursor: pointer; }
+.james-jones-logo { max-width: 300px; height: auto; margin: 30px 0 10px; }
+.svg-text-stroke { fill: var(--text-color, #fff); stroke: var(--text-color, #fff); stroke-width: 1; stroke-dashoffset: 25%; stroke-dasharray: 0 50%; transition: all 1s cubic-bezier(.25, 0, .3, 1);  }
+.svg-text-stroke.animate { animation: svg-text-stroke 2.5s forwards; }
+@keyframes svg-text-stroke { 
+  0% { fill: transparent; stroke: var(--text-color, #fff); stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 1; } 
+  70% { fill: transparent; stroke: var(--text-color, #fff); } 
+  80% { fill: transparent; stroke: var(--text-color, #fff); stroke-width: 1; } 
+  100% { fill: var(--text-color, #fff); stroke: transparent; stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0; } 
+}
+.overlay-dark-grey-hr { width: 35%; border-top: 2px solid #1d1c1a; margin: 10px 0; }
+.james-jones-text-padding { padding: 0 30px 0 0; }
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.james-jones-text-fade-left { opacity: 0; }
+.james-jones-text-fade-left.visible { animation: fadeInLeft 1.0s forwards; }
+.anchor-link-glow { color: #fff; text-decoration: solid; transition: text-shadow 0.2s linear; }
+.anchor-link-glow:hover { text-shadow: 1px 0px 10px #fff; }
+.video-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height:0; opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; border-radius: 10px; }
+.video-responsive.visible { opacity: 1; transform: translateY(0); }
+.video-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; border: 5px solid white; border-radius: 10px; display: block; box-sizing: border-box; }
+.video-margin { margin: 10px 0 90px; }
+.james-jones-logo-icon-only { width: 100px; height: auto; margin: 40px auto 0;  opacity: 0; transform: scale(0.5) rotate(-10deg); transition: all 1.1s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+.james-jones-logo-icon-only.visible { opacity: 1; transform: scale(1) rotate(0deg); }
+.depth-length-and-width-margin { margin-bottom: 20px!important; }
+.jji-joist-flange-width-diagram { max-width: 300px; height: auto; margin: 30px auto 25px; }
+.grades-table-wrapper { display: block; overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
+.grades-table { min-width: 650px; border-collapse: collapse; color: white; margin: 0 auto; }
+.grades-table th, .grades-table td { padding: 8px; }
+.grades-table thead th { font-weight: bold; border-bottom: 2px solid #009845; text-align: left; }
+.grades-table tbody td { border-bottom: 1px solid rgba(255, 255, 255, 0.5); text-align: left; }
+.grades-table tbody td:nth-child(2), .grades-table thead th:nth-child(2) { width: 130px; }
+.performance-grade-margin { margin: 12px 0 0!important; }
+.jji-joists-reading-the-codes-icons::-webkit-scrollbar { height: 6px; }
+.jji-joists-reading-the-codes-icons::-webkit-scrollbar-track { background: #f0f0f0; }
+.jji-joists-reading-the-codes-icons::-webkit-scrollbar-thumb { background-color: #009845; border-radius: 4px; }
+.jji-joists-reading-the-codes-icons::-webkit-scrollbar-thumb:hover { background-color: #007232; }
+.jji-joists-reading-the-codes-icons { scrollbar-width: thin; scrollbar-color: rgba(0, 152, 69, 0.7) #f0f0f0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.understanding-jji-joists-green-hr { width: 80%; border-top: 3px solid #009845; margin: 40px auto; }
+.jji-joist-fade-container-understanding-jji-joists { position: relative; max-height: 180px; overflow: hidden; margin: 20px auto 0; text-align: center; transition: max-height 0.5s ease; }
+.jji-joist-fade-container-understanding-jji-joists::after { content: ""; position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 40px); background: linear-gradient(to bottom, rgba(0, 73, 40, 0) 0%, #004928 100%); pointer-events: none; transition: opacity 0.3s; }
+.jji-joist-fade-container-understanding-jji-joists.expanded { max-height: 2500px; }
+.jji-joist-fade-container-understanding-jji-joists.expanded::after { opacity: 0; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists { position: relative; display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 2.15em auto 0; width: fit-content; padding: 0.6em 1.4em; font-weight: bold; text-align: center; text-decoration: none; border: 2px solid transparent; border-radius: 30px; background-color: #009845; color: #fff; z-index: 2; cursor: pointer; }
+.availability-table-wrapper { display: block; overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
+.availability-table { min-width: 400px; border-collapse: collapse; margin: 0 auto; }
+.availability-table th, .availability-table td { padding: 8px; text-align: left; }
+.availability-table thead th:nth-child(1), .availability-table tbody td:nth-child(1) { width: 150px; }
+.availability-table thead th:nth-child(2), .availability-table tbody td:nth-child(2) { width: 175px; }
+.availability-table thead th:nth-child(3), .availability-table tbody td:nth-child(3) { width: 75px; }
+.availability-table thead th { font-weight: bold; border-bottom: 2px solid #009845; }
+.availability-table tbody td { border-bottom: 1px solid rgba(128, 128, 128, 0.8); }
+.jji-joist-availability-fade-container { position: relative; max-height: 180px; overflow: hidden; margin: 20px auto 0; text-align: center;  transition: max-height 0.5s ease; }
+.jji-joist-availability-fade-container::after { content: ""; position: absolute; top: 60px; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, rgba(235, 235, 235, 0) 0%, rgba(235, 235, 235, 0.9) 50%, #ebebeb 100%); pointer-events: none; transition: opacity 0.3s; }
+.jji-joist-availability-fade-container.expanded { max-height: 2000px; }
+.jji-joist-availability-fade-container.expanded::after { opacity: 0; }
+.text-glow:hover { text-shadow: 1px 0px 15px #ffffff; -webkit-transition: 0.3s linear 0s; -moz-transition: 0.3s linear 0s; -o-transition: 0.3s linear 0s; transition: 0.3s linear 0s; outline: 0 none; }
+.pdf-technical-specification-button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 2px solid white; background-color: rgba(255, 255, 255, 0); color: white; text-decoration: none; font-weight: 600; font-size: 1rem; border-radius: 25px; transition: background-color 0.2s, transform 0.2s; margin: 30px auto; }
+.pdf-technical-specification-button .pdf-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.cwberry-animated-logo { width: 135px; height: auto; margin: 40px auto 0; }
+.amform-page { max-width: 100%; background: #e2e2e2; padding: 40px; border-radius: 30px; }
+.amform-page label { display: none; }
+.amform-page input, .amform-page textarea { box-shadow: none; border: none; border-radius: 10px; padding: 15px 25px; font-weight: 400; margin-bottom: 10px; }
+.amform-page button { width: fit-content; background: #009845; font-weight: 700; font-size: 16px; padding: 10px 20px; transition: box-shadow .3s; }
+.amform-page button:hover, .block.newsletter button:hover, .black-button a:hover { background: #009845; box-shadow: 0 0 5px 0px #009845!important; }
+.amform-page button:after { content: ''; display: inline-block; width: 25px; height: 18px; background-image: url('/media/wysiwyg/make-an-enquiry-logo.png'); background-size: contain; background-repeat: no-repeat; vertical-align: sub; margin-left: 12px; }
+.green-hr { width: 100%; border-top: 3px solid; border-color: #009845; }
+
+@media (max-width: 1250px) {
+
+.overlay-heading h1 { font-size: 60px; line-height: 68px; }
+
+}
+
+@media (max-width: 1150px) {
+
+.video-margin { margin: 30px 0 60px; }
+
+}
+
+@media (max-width: 1024px) {
+
+.columns h2 { width: fit-content; text-align: left; font-size: 28px; line-height: 34px; font-weight: 700; text-align: center; }
+.top-banner-padding { padding: 80px 0 100px; }
+.introduction-margin { margin: 15px 0 35px; }
+
+}
+
+@media (min-width: 1024px) { 
+
+.read-more-read-less-jji-joist-button { width: fit-content; padding: 0.6em 1.2em; font-size: 1rem; font-weight: bold; border: 2px #009845 solid; text-align: center; text-decoration: none; border-radius: 30px; background-color: #009845; overflow: hidden; transition: all 0.3s ease; color: #fff; z-index: 2; margin: 1.5rem auto 0; display: flex; justify-content: center; align-items: center; }
+.read-more-read-less-jji-joist-button::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background-color: #009845; transition: left 0.4s ease; z-index: -1; }
+.read-more-read-less-jji-joist-button:hover::before { left: 100%; }
+.read-more-read-less-jji-joist-button:hover { transform: scale(1.02); border: 2px solid #009845; color: #009845; background-color: transparent; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists { width: fit-content; padding: 0.6em 1.2em; font-size: 1rem; font-weight: bold; border: 2px #009845 solid; text-align: center; text-decoration: none; border-radius: 30px; background-color: #009845; overflow: hidden; transition: all 0.3s ease; color: #fff; z-index: 2; margin: 1.5rem auto 0; display: flex; justify-content: center; align-items: center; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background-color: #009845; transition: left 0.4s ease; z-index: -1; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists:hover::before { left: 100%; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists:hover { transform: scale(1.02); border: 2px solid #009845; color: #fff; background-color: transparent; }
+
+}
+
+@media (max-width: 1000px) {
+
+.introduction-background-image { background-color: #007f48 !important; background-image: none !important; }
+.james-jones-logo { margin: 30px auto 10px; }
+.overlay-dark-grey-hr { width: 45%; margin: 10px auto 0; }
+.video-margin { margin: 30px 0 15px; }
+.james-jones-text-padding { padding: 0 0; }
+.james-jones-manufacturer-column .pagebuilder-column-line { display: flex; flex-direction: column-reverse !important; flex-wrap: nowrap !important; width: 100%; }
+.james-jones-manufacturer-column .pagebuilder-column { width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; }
+.understanding-jji-joists-background-image { background-color: #004928 !important; background-image: none !important; }
+
+}
+
+@media (max-width: 900px) {
+
+.columns h2 { width: fit-content; text-align: center; font-size: 26px; line-height: 32px; font-weight: 700; }
+.top-banner-padding { padding: 75px 0; }
+#cwberry-logo-green-white-background { width: min(120px); height: auto; }
+.overlay-heading h1 { font-size: 50px; line-height: 58px; }
+
+}
+
+@media (max-width: 767px) {
+
+.hide-on-mobile { display: none; }
+.introduction-margin { margin: 10px 0 20px; }
+.james-jones-logo { max-width: 265px; height: auto; }
+.overlay-dark-grey-hr { width: 85%; }
+.read-more-read-less-jji-joist-button { margin: 1.8em auto; font-size: 0.8rem; }
+.read-more-read-less-jji-joist-button-understanding-jji-joists { margin: 1.8em auto; font-size: 0.8rem; }
+.pdf-technical-specification-button { padding: 8px 14px; font-size: 0.8rem; }
+.jji-joist-availability-fade-container { max-height: 160px; }
+.availability-table { min-width: 310px; }
+.availability-table th, .availability-table td { padding: 8px; text-align: left; }
+.availability-table thead th:nth-child(1), .availability-table tbody td:nth-child(1) { width: 120px; }
+.availability-table thead th:nth-child(2), .availability-table tbody td:nth-child(2) { width: 130px; }
+.availability-table thead th:nth-child(3), .availability-table tbody td:nth-child(3) { width: 60px; }
+.amform-page .col-span-3 { grid-column: span 6/span 6; }
+.amform-page { max-width: 100%; background: #e2e2e2; padding: 25px; border-radius: 30px; }
+.amform-page label { display: none; }
+.amform-page input, .amform-page textarea { box-shadow: none; border: none; border-radius: 10px; padding: 15px 25px; font-weight: 400; color: margin-bottom: 10px; }
+.amform-page button { width: fit-content; background: #009845; font-weight: 700; font-size: 16px; padding: 10px 20px; transition: box-shadow .3s; }
+.amform-page button:hover, .block.newsletter button:hover, .black-button a:hover { background: #009845; box-shadow: 0 0 5px 0px #292929!important; }
+
+}
+
+</style>
