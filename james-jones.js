@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // --- Fade Left Animations ---
   const fadeLeftItems = document.querySelectorAll(".james-jones-text-fade-left");
   const fadeLeftObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.15 });
   fadeLeftItems.forEach(el => fadeLeftObserver.observe(el));
 
+  // --- Fade Top Animations ---
   const fadeTopItems = document.querySelectorAll(".jji-joist-fade-from-top");
   const fadeTopObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.3 });
   fadeTopItems.forEach(el => fadeTopObserver.observe(el));
 
+  // --- Logo Stroke & Video Wrapper ---
   const logoStroke = document.querySelector(".james-jones-logo .svg-text-stroke");
   const videoWrapper = document.querySelector(".video-responsive");
   let logoIntervalRun = false;
@@ -54,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logoStroke) mainObserver.observe(logoStroke);
   if (videoWrapper) mainObserver.observe(videoWrapper);
 
+  // --- Logo Icon Only Animations ---
   const logoIcons = document.querySelectorAll(".james-jones-logo-icon-only");
   if (logoIcons.length > 0) {
     const iconObserver = new IntersectionObserver((entries, obs) => {
@@ -67,6 +71,26 @@ document.addEventListener("DOMContentLoaded", () => {
     logoIcons.forEach(icon => iconObserver.observe(icon));
   }
 
+    // --- Intro Container Read More / Read Less ---
+  const container = document.querySelector(".intro-container");
+  const introBtn = document.getElementById("readMoreBtn");
+  if (container && introBtn) {
+    introBtn.setAttribute("aria-expanded", "false");
+    introBtn.addEventListener("click", () => {
+      const isExpanded = container.classList.toggle("expanded");
+      introBtn.textContent = isExpanded ? "Read Less" : "Read More";
+      introBtn.setAttribute("aria-expanded", isExpanded);
+      if (isExpanded) {
+        setTimeout(() => {
+          container.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 300);
+      } else {
+        container.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // --- JJI Joist Read More / Read Less Buttons ---
   const readMoreBtns = document.querySelectorAll('.read-more-read-less-jji-joist-button');
   readMoreBtns.forEach(btn => {
     const fadeContainer = btn.previousElementSibling;
@@ -80,6 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // --- Understanding JJI Joists Read More / Read Less Buttons ---
   const understandingBtns = document.querySelectorAll('.read-more-read-less-jji-joist-button-understanding-jji-joists');
   understandingBtns.forEach(btn => {
     const fadeContainer = btn.previousElementSibling;
@@ -90,4 +116,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
 });
