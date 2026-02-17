@@ -168,10 +168,24 @@
 
 }
 
+@media (min-width: 768px) {
+
+.intro-container, .intro-container::after, .intro-container.expanded, .intro-container.expanded::after { max-height: none !important; overflow: visible !important; }
+.intro-text { font-size: 16px !important; line-height: 1.5 !important; }
+.read-more-read-less-button { display: none !important; }
+
+}
+
 @media (max-width: 767px) {
 
 .hide-on-mobile { display: none; }
 .introduction-margin { margin: 10px 0 20px; }
+.intro-container { position: relative; max-height: 180px; overflow: hidden; margin: 0 auto; text-align: center; transition: max-height 0.5s ease; }
+.intro-container::after { content: ""; position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 40px); background: linear-gradient(to bottom, rgba(255,255,255,0) 10%, white 85%); pointer-events: none; transition: opacity 0.3s; }
+.intro-container.expanded { max-height: 2000px; }
+.intro-container.expanded::after { opacity: 0; }
+.-intro-text { font-size: 16px !important; line-height: 1.5 !important; }
+.read-more-read-less-button { display: flex; position: relative; align-items: center; justify-content: center; gap: 0.5em; margin: 1.8em auto 0; width: fit-content; padding: 0.6em 1.4em; font-weight: bold; font-size: 0.8rem; text-align: center; text-decoration: none; border: 2px solid transparent; border-radius: 30px; background-color: #009845; color: #fff; z-index: 2; cursor: pointer; }
 .james-jones-logo { max-width: 265px; height: auto; }
 .overlay-dark-grey-hr { width: 85%; }
 .read-more-read-less-jji-joist-button { margin: 1.8em auto; font-size: 0.8rem; }
